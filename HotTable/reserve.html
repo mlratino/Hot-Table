@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reservations - Express</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+  <body>
+  <div id="inputs">
+  <input type="text" class="form-control" id="identification">
+  <input type="text" class="form-control" id="name">
+  <input type="text" class="form-control" id="email">
+  <input type="number" class="form-control" id="phoneNumber">
+</div>
+<div>
+<button type="submit" id="makeReservation">
+    <span>
+Make a reservation
+</span>
+</button>
+</div>
+<script type="text/javascript">
+$("#makeReservation").on("click", function(event) {
+    event.preventDefault();
+    var newCustomer = {
+        identification: $("#identification").val().trim(),
+        name: $("#name").val().trim(),
+        email: $("#email").val().trim(),
+        phoneNumber:$("#phoneNumber").val().trim()
+};
+$.post("/api/tables", newTable)
+alert("reserving table");
+})
+</script>
+</body>
+</html>
